@@ -22,8 +22,8 @@
   "scripts": {
     "dev": "concurrently -k -n \"React,Stylus\" -p \"[{name}]\" -c \"blue,yellow\" \"npm run react:start\" \"npm run stylus:watch\"",
     "build": "npm run stylus:build && npm run react:build",
-    "stylus:watch": "stylus ./styles/app.styl --include ./styles --out ./public/css --watch --compress",
-    "stylus:build": "stylus ./styles/app.styl --include ./styles --out ./public/css --compress",
+    "stylus:watch": "stylus ./styles/index.styl --include ./styles --out ./public/css --watch --compress",
+    "stylus:build": "stylus ./styles/index.styl --include ./styles --out ./public/css --compress",
     "react:start": "react-scripts start",
     "react:build": "react-scripts build",
     "test": "react-scripts test",
