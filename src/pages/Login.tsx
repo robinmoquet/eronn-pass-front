@@ -1,12 +1,8 @@
 import React from 'react';
 
-interface Props {
-
-}
-
-const Login: React.FC<Props> = ({  }) => {
+const Login: React.FC = () => {
     return (
-      <div className="Login">
+      <div className="login">
         <p>Page Login</p>
       </div>
     );
