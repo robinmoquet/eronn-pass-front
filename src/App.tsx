@@ -1,19 +1,9 @@
 import React from 'react';
+import Router from './router/Router';
 
-interface Props {
-  helloMessage: string
-}
-
-const App: React.FC<Props> = ({ helloMessage }) => {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <h1>test</h1>
-      <p>{ helloMessage }</p>
-      <ul>
-        <li>test</li>
-      </ul>
-      <a href="">ble</a>
-    </div>
+    <Router />
   );
 }
 
