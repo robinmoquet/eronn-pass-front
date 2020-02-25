@@ -4,6 +4,9 @@ const routes: { [key: string]: any } = {
     },
     login: {
         path: '/login'
+    },
+    signup: {
+        path: '/signup'
     }
 };
 

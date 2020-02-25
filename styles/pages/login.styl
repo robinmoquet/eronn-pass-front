@@ -1,42 +1,57 @@
+medium = 'screen and (max-width: 800px)'
+.login
+    display flex
+    flex-direction row
+    @media medium
+        flex-direction column
+    .__information
+        width 55%
+        height 100vh
+        @media medium
+            width 100%
+            height 40%
+        .__description
+            margin-bottom 250px
+            @media medium
+                margin-bottom 20px
+    .__login-form
+        width 45%
+        height 100vh
+        @media medium
+            width 100%
+            height 60%            
 .login
     background-color white
     height 100vh
-    display flex
-    flex-direction row
     .__information
-        position relative
-        width 55%
-        height 100vh
         background-color #d9e6e9
         .__logo
-            position absolute
-            top 40px
-            left 48px
+            text-align right 
+            margin-top 50px
         .__content   
-            position relative 
-            height 100vh
-            padding 0 32px 0 48px
+            height 100%
+            padding 0 32px
+            display flex
+            flex-direction column
+            justify-content space-between
+            align-items flex-end
             .__description
-                position relative
-                top 250px
                 min-width 300px
                 max-width 600px
+                text-align right 
                 .__first-description
                     background-color red
                     margin-bottom 10px
                 .__second-description
-                    background-color blue
+                    background-color blue              
     .__login-form
-        width 45%
-        min-width 500px
-        height: 100vh
+        min-width 370px
         .__signup-link:hover
             .__link-btn
                 background-color rgba(0, 0, 0, 0.1)
         .__signup-link
-            position absolute
-            top 50px
-            right 40px
+            text-align right 
+            margin-top 40px
             .__link-text
                 color #0e353d
                 line-height 20px
@@ -48,23 +63,32 @@
                 color #0e353d
                 font-weight 600
         .__content
-            position relative
-            top 250px
-            padding 0 80px
-            height 350px
+            padding 0 35px
+            height 100%
             display flex
             flex-direction column
+            justify-content space-between
             .__text
-                height 30%
+                height 20%
                 font-size: 42px
             .__form
-                height 70%
                 display flex
                 flex-direction column
                 justify-content space-between
-                div
+                height 40%
+                margin-bottom 40px
+                min-height: 225px
+                form
                     display: flex
-                    flex-direction: column
+                    flex-direction column
+                    justify-content space-around
+                    height 100%
+                    div
+                        display: flex
+                        flex-direction column
+                        .__error-message
+                            color red
+                            padding-top 5px
                     label 
                         padding-bottom 20px
                     input 
@@ -78,14 +102,15 @@
                     input:focus 
                         border 2px solid rgba(0, 0, 0, 0.4)
                         outline none
-                button 
-                    height 50px
-                    background-color rgba(0, 0, 0, 0.4)
-                    border none 
-                    border-radius 4px
-                    color white
-                    font-size 22px
-                button:hover
-                    cursor pointer
-                    background-color rgba(0, 0, 0, 0.5)
+                    button 
+                        height 50px
+                        background-color rgba(0, 0, 0, 0.4)
+                        border none 
+                        border-radius 4px
+                        color white
+                        font-size 22px
+                    button:hover
+                        cursor pointer
+                        background-color rgba(0, 0, 0, 0.5)
+                
                     
