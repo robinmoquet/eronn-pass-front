@@ -1,0 +1,24 @@
+.input-field
+    margin-bottom calc(var(--space) * 3)
+    .input-field__label, .input-field__input
+        display block
+        width 100%
+    .input-field__label
+        margin-bottom calc(var(--space))
+        font-weight 600
+
+    .input-field__input
+        transition .3s ease
+        padding calc(var(--space)) 0
+        border-bottom var(--border)
+
+    .input-field__error
+        margin-top var(--space)
+        color var(--error)
+
+    &.input-field--error
+        .input-field__input
+            border-color var(--error)
+    &.input-field--valid
+        .input-field__input
+            border-color var(--valid)

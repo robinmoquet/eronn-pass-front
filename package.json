@@ -22,17 +22,19 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
+    "prettier": "1.19.1",
     "stylus": "^0.54.7"
   },
   "scripts": {
     "dev": "concurrently -k -n \"Stylus, React\" -p \"[{name}]\" -c \"yellow,blue\" \"npm run stylus:watch\" \"npm run react:start\"",
     "build": "npm run stylus:build && npm run react:build",
-    "stylus:watch": "stylus ./styles/index.styl --include ./styles --out ./public/css --watch --compress",
+    "stylus:watch": "stylus ./styles/index.styl --include ./styles --out ./public/css --watch -m --compress",
     "stylus:build": "stylus ./styles/index.styl --include ./styles --out ./public/css --compress",
     "react:start": "react-scripts start",
     "react:build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --config ./.prettierrc --write ./src/**/*"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,5 +1,56 @@
 :root
-    --background #ffffff
-    --background-contrast #000000
-    --text #333333
+    --background #f4f4f4
+    --background-light #fff
+    --background-contrast #272727
+    --shadow #d3d3d3
+    --text #2e2e2e
+    --text-secondary #6e6e6e
     --text-contrast #f8f8f8
+
+    --tonic #3c8ee4
+    --tonic-hover #3b74c9
+    --error #f52d0a
+    --valid var(--tonic)
+
+    --border 2px solid #d3d3d3
+    --space 8px
+    --default-raduis 5px
+    --wrapper calc(100% - 40px)
+    --text-size 16px
+    --default-font 'Work Sans', monospace;
+    --title-font 'Arvo', monospace;
+
+body.dark-mode
+    --background #1f1d26
+    --background-light #272530
+    --background-contrast #f0f0f0
+    --shadow #17151e
+    --text #e1e1e1
+    --text-contrast #0f0f0f
+
+// media queries spécifique pour le wrapper
+@media only screen and (min-width: 1240px)
+    :root
+        --wrapper 1200px
+
+$breakpoints = sm, md, lg, xl
+
+$sm = {
+    min: 350px,
+    max: 540px
+}
+
+$md = {
+    min: 541px,
+    max: 1024px
+}
+
+$lg = {
+    min: 1025px,
+    max: 1280px
+}
+
+$xl = {
+    min: 1281px,
+    max: false
+}

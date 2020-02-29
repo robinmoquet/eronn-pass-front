@@ -1,0 +1,41 @@
+/*
+ *
+ * La mixin breakpoint permet d'ajouter un mediaqueries
+ * sur un element.
+ *
+ * Cette mixin doit être appeler avec un "+" devant
+ * comme montré si dessous.
+ *
+ * Ex:
+ * div.test
+ *   color: fcolor($red)
+ *   +breakpoint(md)
+ *      color: fcolor($blue)
+ *
+ * Elle prend en premier param le point de rupture (ex: sm, md, lg, xl)
+ * Vous pouvez creer vos propre point de rupture comme expliqué
+ * dans le fichier './css/stylus/core-css/variables/breakpoints.styl'
+ *
+ * Le second param $direction, représent la direction du media queries.
+ *
+ * down => pour cette valeur et tous les valeurs inférieur
+ * up => pour cette valeur et tous les valeurs supérieur
+ * only => uniquement pour cette valeur
+ *
+ * @param $breakpoint Le point de rupture
+ * @param $direction Le direction (ex: down, up, only)
+ *
+ */
+breakpoint($breakpoint = $md, $direction = up)
+    if $breakpoint.max == false && $direction == down
+        @media screen and (min-width: $breakpoint.min)
+            {block}
+    else if $breakpoint.min == false || $direction == down
+        @media screen and (max-width: $breakpoint.max)
+            {block}
+    else if $breakpoint.max == false || $direction == up
+        @media screen and (min-width: $breakpoint.min)
+            {block}
+    else if $direction == only
+        @media screen and (min-width: $breakpoint.min) and (max-width: $breakpoint.max)
+            {block}

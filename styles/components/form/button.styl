@@ -1,0 +1,27 @@
+.button
+    cursor pointer
+    background var(--tonic)
+    padding calc(var(--space) * 2)
+    border-radius var(--default-raduis)
+    display inline-block
+    color var(--text-contrast)
+    box-shadow 0 5px 5px var(--shadow)
+    font-weight 600
+    transition .3s ease
+
+    +breakpoint($sm, down)
+        width 100%
+
+    &:hover
+        background var(--tonic-hover)
+
+    &.button--stroke
+        background none
+        border 1px solid var(--tonic)
+        box-shadow none
+        color var(--tonic)
+        padding var(--space) calc(var(--space) * 2)
+
+        &:hover
+            background var(--tonic)
+            color var(--text-contrast)

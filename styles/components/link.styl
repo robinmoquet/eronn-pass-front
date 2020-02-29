@@ -1,0 +1,22 @@
+.link
+    color var(--tonic)
+    position relative
+    &:after
+        position absolute
+        content ""
+        transition .3s ease
+        height 2px
+        width 0
+        border-radius 2px
+        background var(--tonic)
+        bottom -5px
+        left 50%
+        transform translateX(-50%)
+
+    &:hover
+        &:after
+            width 100%
+
+    &.link--secondary
+        color var(--text-secondary)
+

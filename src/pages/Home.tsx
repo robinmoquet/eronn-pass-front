@@ -1,15 +1,17 @@
 import React from 'react';
+import NavBar from '../components/container/NavBar';
 
 interface Props {
-  HomeMessage: string
+    HomeMessage: string;
 }
 
 const Home: React.FC<Props> = ({ HomeMessage }) => {
     return (
-      <div className="home">
-        <p>{HomeMessage}</p>
-      </div>
+        <div className="home">
+            <NavBar />
+            <p>{HomeMessage}</p>
+        </div>
     );
 };
-  
-  export default Home;
+
+export default Home;

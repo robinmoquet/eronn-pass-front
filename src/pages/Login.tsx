@@ -1,39 +1,40 @@
-import React from 'react';
-import SigninForm  from '../form/SigninForm';
+import React, { Fragment } from 'react';
+import SigninForm from '../form/SigninForm';
 import { Link } from 'react-router-dom';
+import Title from '../components/typo/Title';
+import Wrap from '../components/container/Wrap';
+import Button from '../components/form/Button';
 import { path } from '../router/routes';
+import Footer from '../components/container/Footer';
+import { PROJECT_NAME } from '../config/global';
+import NavBar from '../components/container/NavBar';
 
 const Login: React.FC = () => {
     return (
-      <div className="login">
-        <div className="__login-form">
-          <div className="__content">
-            <Link to={path('signup')} className="__signup-link">
-              <span className="__link-text">
-                Nouveau sur Eronn pass ?
-              </span>
-              <span className="__link-btn">
-                Démarrer
-              </span>
-            </Link>
-            <h1 className="__text">Se connecter sur Eronn pass</h1>
-            <div className="__form">
-              <SigninForm />
+        <Fragment>
+            <div className="login-page">
+                <NavBar />
+                <Wrap>
+                    <section className="login">
+                        <Title
+                            text="Se connecter"
+                            className="login__title"
+                            tonic={true}
+                        />
+                        <SigninForm />
+
+                        <p className="login__new-user">
+                            Nouveau sur {PROJECT_NAME} ?{' '}
+                            <Link to={path('signup')}>
+                                <Button text="Créer un compte" stroke={true} />
+                            </Link>
+                        </p>
+                    </section>
+                </Wrap>
+                <Footer />
             </div>
-          </div>
-        </div>
-        <div className="__information">
-          <div className="__content">
-            <p className="__logo">Eronn pass Logo</p>
-            <div className="__description">
-              <h1 className="__first-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum error voluptate, molestias perferendis rem illo, a quo minus repellat sint tempore corporis sed similique incidunt odit laudantium maxime sequi fuga!</h1>
-              <p className="__second-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus dolores, recusandae voluptates at nulla corrupti facere ipsam eligendi, odio, officia nam. Neque veritatis, ullam quas doloribus in voluptatem veniam aspernatur.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        </Fragment>
     );
 };
-  
-  export default Login;
-  
+
+export default Login;

@@ -1,0 +1,15 @@
+.footer
+    background var(--background-light)
+    display flex
+    justify-content space-between
+    align-items center
+    color var(--text)
+    padding-top calc(var(--space) * 3)
+    padding-bottom calc(var(--space) * 3)
+
+    +breakpoint($sm, down)
+        flex-direction column
+
+        p:last-child
+            margin-top var(--space)
+

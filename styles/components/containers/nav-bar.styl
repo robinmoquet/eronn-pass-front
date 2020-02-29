@@ -1,0 +1,32 @@
+.nav-bar
+    background var(--background-light)
+    padding-top calc(var(--space) * 1)
+    padding-bottom calc(var(--space) * 1)
+    display flex
+    justify-content space-between
+    align-items center
+    box-shadow 0 5px 10px var(--shadow)
+
+    .nav-bar__logo
+        // text-transform uppercase
+        font-weight 800
+        color var(--tonic)
+        font-size 24px
+        font-family var(--title-font)
+        +breakpoint($sm, down)
+            display none
+    .nav-bar__logo-mobile
+        display none
+        +breakpoint($sm, down)
+            display block
+
+    .nav-bar__actions
+        display flex
+        align-items center
+        a
+            margin calc(var(--space) * 2)
+
+    .theme-picker
+        color var(--tonic)
+        cursor pointer
+
