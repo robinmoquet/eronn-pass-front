@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { path } from './routes';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
+import NotFound from '../pages/NotFound';
 
 const Router: React.FC = () => {
     return (
@@ -18,10 +19,7 @@ const Router: React.FC = () => {
                     exact
                     component={Login}
                 />
-                <Route
-                    path="/"
-                    render={() => <div>erreur 404 route not found</div>}
-                />
+                <Route path="/" component={NotFound} />
             </Switch>
         </BrowserRouter>
     );

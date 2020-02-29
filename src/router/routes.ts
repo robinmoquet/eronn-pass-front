@@ -8,6 +8,9 @@ const routes: { [key: string]: any } = {
     signup: {
         path: '/signup',
     },
+    technicalSupport: {
+        path: '/tech-support',
+    },
 };
 
 /**
