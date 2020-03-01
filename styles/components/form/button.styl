@@ -5,15 +5,16 @@
     border-radius var(--default-raduis)
     display inline-block
     color var(--text-contrast)
-    box-shadow 0 5px 5px var(--shadow)
+    // box-shadow 0 5px 5px var(--shadow)
     font-weight 600
     transition .3s ease
 
-    +breakpoint($sm, down)
+    +breakpoint(sm, down)
         width 100%
 
     &:hover
         background var(--tonic-hover)
+        box-shadow 0 5px 5px var(--shadow)
 
     &.button--stroke
         background none

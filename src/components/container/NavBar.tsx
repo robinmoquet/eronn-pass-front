@@ -21,7 +21,7 @@ const NavBar: React.FC = () => {
             <div className="nav-bar__actions">
                 <Link to={path('login')} className="link link--secondary">Connexion</Link>
                 <Link to={path('signup')} className="link link--secondary">Inscription</Link>
-                <a className="theme-picker" onClick={handleClickThemePicker}>
+                <a href="/theme" className="theme-picker" onClick={handleClickThemePicker}>
                     <i className="material-icons">
                         invert_colors
                     </i>

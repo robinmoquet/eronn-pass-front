@@ -23,35 +23,38 @@ const SigninForm: React.FC = () => {
     });
     return (
         <form onSubmit={formik.handleSubmit}>
-            <Paper>
-                <InputField
-                    id="email"
-                    label="Adresse mail :"
-                    name="email"
-                    type="email"
-                    placeholder="john-doe@email.com"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.email}
-                    touched={formik.touched.email}
-                    error={formik.errors.email}
-                />
-                <InputField
-                    id="password"
-                    label="Mot de passe :"
-                    name="password"
-                    type="password"
-                    placeholder="••••••••••••••••••"
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.password}
-                    touched={formik.touched.password}
-                    error={formik.errors.password}
-                />
-            </Paper>
+            <div className="reveal-2">
+                <Paper className="reveal-2">
+                    <InputField
+                        id="email"
+                        label="Adresse mail :"
+                        name="email"
+                        type="email"
+                        placeholder="john-doe@email.com"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.email}
+                        touched={formik.touched.email}
+                        error={formik.errors.email}
+                    />
+                    <InputField
+                        id="password"
+                        label="Mot de passe :"
+                        name="password"
+                        type="password"
+                        isPassword={true}
+                        placeholder="••••••••••••••••••"
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        value={formik.values.password}
+                        touched={formik.touched.password}
+                        error={formik.errors.password}
+                    />
+                </Paper>
+            </div>
 
-            <div className="login__bottom-action">
-                <Button text="Connexion" type="button" />
+            <div className="login__bottom-action reveal-3">
+                <Button text="Connexion" type="submit" />
             </div>
         </form>
     );

@@ -1,15 +1,26 @@
 import React from 'react';
 import NavBar from '../components/container/NavBar';
+import { PROJECT_NAME } from '../config/global';
 
-interface Props {
-    HomeMessage: string;
-}
+const Home: React.FC = () => {
+    // WARNING Ne pas supprimé
+    // Utilisé pour générer le background du titre
+    /*
+    let res = '';
+    let color = 'var(--tonic)';
+    let nb = 60;
+    for(let i = 1; i < nb; i++) {
+        if(i === nb - 1) res += `${i}px ${i}px 0px ${color};`;
+        else res += `${i}px ${i}px 1px ${color}, `;
+    }
+    console.log(res);
+    */
 
-const Home: React.FC<Props> = ({ HomeMessage }) => {
     return (
-        <div className="home">
+        <div className="home-page">
             <NavBar />
-            <p>{HomeMessage}</p>
+
+            <h1 className="home__title">{PROJECT_NAME}</h1>
         </div>
     );
 };

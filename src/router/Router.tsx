@@ -12,7 +12,7 @@ const Router: React.FC = () => {
                 <Route
                     path={path('home', null, false)}
                     exact
-                    render={() => <Home HomeMessage="page home test" />}
+                    component={Home}
                 />
                 <Route
                     path={path('login', null, false)}

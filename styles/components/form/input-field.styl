@@ -7,18 +7,38 @@
         margin-bottom calc(var(--space))
         font-weight 600
 
-    .input-field__input
+    .input-field__input-container
         transition .3s ease
-        padding calc(var(--space)) 0
         border-bottom var(--border)
+        display flex
+        justify-content space-between
+        align-items center
+
+        .input-field__input
+            padding calc(var(--space)) 0
+
+        .input-field__actions
+            display flex
+            align-items center
+            span 
+                padding 0 calc(var(--space) / 2)
+
+                &.password-visibility-icon
+                    color var(--text-secondary) !important
+                    cursor pointer
+
 
     .input-field__error
         margin-top var(--space)
         color var(--error)
 
     &.input-field--error
-        .input-field__input
+        .input-field__input-container
             border-color var(--error)
+            .input-field__actions span
+                color var(--error)
     &.input-field--valid
-        .input-field__input
+        .input-field__input-container
             border-color var(--valid)
+            .input-field__actions span
+                color var(--valid)
