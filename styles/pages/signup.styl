@@ -1,11 +1,12 @@
-.login-page
+.signup-page
     min-height 100vh
     display flex
     flex-direction column
     justify-content space-between
 
-    .login
+    .signup
         margin 0 auto
+        margin-bottom calc(var(--space) * 5)
         display flex
         flex-direction column
         justify-content center
@@ -17,15 +18,15 @@
         +breakpoint(sm, down)
             width 100%
 
-        .login__bottom-action
+        .signup__bottom-action
             text-align right
             margin-top calc(var(--space) * 3)
 
-        .login__new-user
+        .signup__already-user
             text-align center
-            margin-top calc(var(--space) * 10)
+            margin-bottom calc(var(--space) * 10)
+            margin-top calc(var(--space) * 3)
+
             .button
                 margin-left var(--space)
                 margin-top var(--space)
-            +breakpoint(sm, down)
-                margin-top calc(var(--space) * 8)

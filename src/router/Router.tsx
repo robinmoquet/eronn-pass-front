@@ -4,6 +4,7 @@ import { path } from './routes';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
+import Signup from '../pages/Signup';
 
 const Router: React.FC = () => {
     return (
@@ -18,6 +19,11 @@ const Router: React.FC = () => {
                     path={path('login', null, false)}
                     exact
                     component={Login}
+                />
+                <Route
+                    path={path('signup', null, false)}
+                    exact
+                    component={Signup}
                 />
                 <Route path="/" component={NotFound} />
             </Switch>

@@ -17,7 +17,7 @@ const routes: { [key: string]: any } = {
  * Permet de récupérer l'url d'une route.
  * Ex:
  *      path('user', null, false) => /user/:id
- *      path('user', {id: '25', device: 'desktop'}) => /user/24?device=desktop
+ *      path('user', {id: '24', device: 'desktop'}) => /user/24?device=desktop
  *
  * @param routeName Le nom de la route
  * @param options Les parameters d'url, si present dans le path, ils seront ajouter dans la QueryString
