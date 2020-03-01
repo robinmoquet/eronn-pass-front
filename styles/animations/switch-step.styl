@@ -1,0 +1,83 @@
+:root
+    --switch-step-animation-duration 800ms
+
+.step-container
+    position relative
+    min-height 350px
+
+    .step
+        opacity 1
+        position absolute
+        left 0
+        top 0
+        width 100%
+        animation-duration var(--switch-step-animation-duration)
+        animation-timing-function cubic-bezier(.2, .5, .5, 1)
+
+    .current-step
+        position relative
+        left 0
+        opacity 1
+    .next-step
+        left 100%
+        opacity 0
+        z-index -1
+    .prev-step
+        left -100%
+        opacity 0
+        z-index -1
+
+    .animation-to-prev
+        animation-name switch-to-prev
+    .animation-to-next
+        animation-name switch-to-next
+    .animation-to-current-from-prev
+        animation-name switch-to-current-step-from-prev
+    .animation-to-current-from-next
+        animation-name switch-to-current-step-from-next
+
+
+@keyframes switch-to-current-step-from-prev {
+    from {
+        left -100%
+        opacity 0
+    }
+    to {
+        left 0
+        opacity 1
+    }
+}
+
+@keyframes switch-to-current-step-from-next {
+    from {
+        left 100%
+        opacity 0
+    }
+    to {
+        left 0
+        opacity 1
+    }
+}
+
+@keyframes switch-to-prev {
+    from {
+        left 0
+        opacity 1
+    }
+    to {
+        left -100%
+        opacity 0
+    }
+}
+
+@keyframes switch-to-next {
+    from {
+        left 0
+        opacity 1
+    }
+    to {
+        left 100%
+        opacity 0
+    }
+}
+

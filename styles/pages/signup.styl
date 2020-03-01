@@ -4,8 +4,10 @@
     flex-direction column
     justify-content space-between
 
+    .wrapper
+        overflow-x hidden
     .signup
-        margin 0 auto
+        margin calc(var(--space) * 3) auto
         margin-bottom calc(var(--space) * 5)
         display flex
         flex-direction column
@@ -18,15 +20,36 @@
         +breakpoint(sm, down)
             width 100%
 
+        .signup__title-container
+            display flex
+            justify-content space-between
+            align-items center
+
+            .signup__current-step
+                font-family var(--title-font)
+
         .signup__bottom-action
-            text-align right
+            display flex
+            justify-content flex-end
             margin-top calc(var(--space) * 3)
+            .button
+                margin-left calc(var(--space) * 3)
+            +breakpoint(sm, down)
+                justify-content center
+                flex-direction column-reverse
+                width 100%
+                .button
+                    margin-left 0
+                    margin-top calc(var(--space) * 2)
+                .button + .button
+                    margin-top 0
 
         .signup__already-user
             text-align center
-            margin-bottom calc(var(--space) * 10)
-            margin-top calc(var(--space) * 3)
+            margin-top calc(var(--space) * 10)
 
             .button
                 margin-left var(--space)
                 margin-top var(--space)
+            +breakpoint(sm, down)
+                margin-top calc(var(--space) * 8)

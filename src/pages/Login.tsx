@@ -30,7 +30,7 @@ const Login: React.FC = () => {
                                 <Link to={path('signup')}>
                                     <Button
                                         text="Créer un compte"
-                                        stroke={true}
+                                        style="stroke"
                                     />
                                 </Link>
                             </p>

@@ -3,12 +3,15 @@ import React from 'react';
 interface Props {
     text: string
     type?: "button" | "submit" | "reset"
-    stroke?: boolean
+    style?: "primary" | "secondary" | "stroke"
+    onClick?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined
 }
 
-const Button: React.FC<Props> = ({ text, type , stroke}: Props) => {
+const Button: React.FC<Props> = (props: Props) => {
+    const { text, type , style, onClick} = props;
+
     return (
-        <button className={stroke ? "button button--stroke" : "button"} type={type ? type : 'button'}>{text}</button>
+        <button onClick={onClick} className={style ? `button button--${style}` : "button button--primary"} type={type ? type : 'button'}>{text}</button>
     );
 };
 
