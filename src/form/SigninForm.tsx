@@ -18,7 +18,7 @@ const SigninForm: React.FC = () => {
             password: Yup.string().required(),
         }),
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2));
+            // alert(JSON.stringify(values, null, 2));
         },
     });
     return (
@@ -41,7 +41,7 @@ const SigninForm: React.FC = () => {
                     label="Mot de passe :"
                     name="password"
                     type="password"
-                    isPassword={true}
+                    isPassword
                     placeholder="••••••••••••••••••"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}

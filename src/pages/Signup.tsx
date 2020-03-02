@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import NavBar from '../components/container/NavBar';
 import Footer from '../components/container/Footer';
 import AnimationIntersectionObserver from '../animations/AnimationIntersectionObserver';
 import Wrap from '../components/container/Wrap';
 import Title from '../components/typo/Title';
 import { PROJECT_NAME } from '../config/global';
-import { Link } from 'react-router-dom';
 import { path } from '../router/routes';
 import Button from '../components/form/Button';
 import Step1 from '../form/signup/Step1';
@@ -14,6 +14,7 @@ import Step3 from '../form/signup/Step3';
 
 const Signup = () => {
     const [currentStep, setCurrentStep] = useState(1);
+    const [signupValue, setSignupValue] = useState({});
     const numberSteps = 3;
 
     const animationDuration = getComputedStyle(document.documentElement)
@@ -25,6 +26,8 @@ const Signup = () => {
             switchAnimation('next');
         }
         if (currentStep < 3) setCurrentStep(currentStep + 1);
+        setSignupValue({ ...signupValue, ...values });
+        // console.log(signupValue);
     };
 
     const handlePrev = () => {
@@ -75,10 +78,10 @@ const Signup = () => {
                             <Title
                                 text="Créer un compte"
                                 className="signup__title"
-                                tonic={true}
+                                tonic
                             />
                             <p className="signup__current-step">
-                                {currentStep} / {numberSteps}
+                                {currentStep} /{numberSteps}
                             </p>
                         </div>
                         <div className="step-container">
@@ -100,11 +103,11 @@ const Signup = () => {
 
                         <div className="reveal-4">
                             <p className="signup__already-user">
-                                Vous avez déjà un compte {PROJECT_NAME} ?{' '}
+                                Vous avez déjà un compte {PROJECT_NAME} ?
                                 <Link to={path('login')}>
                                     <Button
                                         text="Se connecter"
-                                        style="stroke"
+                                        variant="stroke"
                                     />
                                 </Link>
                             </p>

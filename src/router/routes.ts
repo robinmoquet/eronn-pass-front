@@ -68,24 +68,18 @@ export const path = (
 
 const regexParam = /{([a-zA-Z-]+)}/g;
 
-const routeHaveParams = (route: string): boolean => {
-    return regexParam.test(route);
-};
+const routeHaveParams = (route: string): boolean => regexParam.test(route);
 
 const hasRestOptions = (
     options: { [key: string]: string },
     params: Array<string>
-): boolean => {
-    return (
-        Object.keys(options).filter(
-            (option: string) => !params.includes(option)
-        ).length > 0
-    );
-};
+): boolean =>
+    Object.keys(options).filter((option: string) => !params.includes(option))
+        .length > 0;
 
 const getListParams = (route: string): Array<string> | null => {
     const found = route.match(regexParam);
-    let res: Array<string> = [];
+    const res: Array<string> = [];
     found?.every((param: string) => res.push(param.replace(/[{}]/g, '')));
     return res;
 };

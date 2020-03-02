@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../components/container/NavBar';
 import { PROJECT_NAME } from '../config/global';
 
-const Home: React.FC = () => {
+const Home: React.FC = () => (
     // WARNING Ne pas supprimé
     // Utilisé pour générer le background du titre
     /*
@@ -16,13 +16,10 @@ const Home: React.FC = () => {
     console.log(res);
     */
 
-    return (
-        <div className="home-page">
-            <NavBar />
+    <div className="home-page">
+        <NavBar />
 
-            <h1 className="home__title">{PROJECT_NAME}</h1>
-        </div>
-    );
-};
-
+        <h1 className="home__title">{PROJECT_NAME}</h1>
+    </div>
+);
 export default Home;

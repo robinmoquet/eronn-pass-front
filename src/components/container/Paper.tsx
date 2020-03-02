@@ -5,8 +5,6 @@ interface Props {
     className?: string;
 }
 
-const Paper = ({ children , className}: Props) => {
-    return <div className={className ? `${className} paper` : "paper"}>{children}</div>;
-};
+const Paper = ({ children, className }: Props) => <div className={className ? `${className} paper` : 'paper'}>{children}</div>;
 
 export default Paper;

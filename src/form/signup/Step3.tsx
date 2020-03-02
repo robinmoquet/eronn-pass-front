@@ -1,8 +1,8 @@
 import React from 'react';
 import { Formik } from 'formik';
+import * as Yup from 'yup';
 import InputField from '../../components/form/InputField';
 import Paper from '../../components/container/Paper';
-import * as Yup from 'yup';
 import Button from '../../components/form/Button';
 
 interface Props {
@@ -12,66 +12,65 @@ interface Props {
 }
 
 const Step3: React.FC<Props> = ({ onSave, className, onPrev }: Props) => {
+  const initialValues = {
+    password: '',
+    passwordConfirm: '',
+  };
 
-    const initialValues = {
-        password: '',
-        passwordConfirm: '',
-    };
+  const validationSchema = Yup.object({
+    password: Yup.string().required(),
+    passwordConfirm: Yup.string().required(),
+  });
 
-    const validationSchema = Yup.object({
-        password: Yup.string().required(),
-        passwordConfirm: Yup.string().required(),
-    });
+  return (
+    <div className={className}>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={(values) => {
+          onSave(values);
+        }}
+      >
+        {(props) => (
+          <form onSubmit={props.handleSubmit} noValidate>
+            <Paper className="reveal-2">
+              <InputField
+                id="password"
+                label="Mot de passe :"
+                name="password"
+                type="password"
+                isPassword
+                placeholder="••••••••••••••••••"
+                onChange={props.handleChange}
+                onBlur={props.handleBlur}
+                value={props.values.password}
+                touched={props.touched.password}
+                error={props.errors.password}
+              />
+              <InputField
+                id="passwordConfirm"
+                label="Confirmer votre mot de passe :"
+                name="passwordConfirm"
+                type="password"
+                isPassword
+                placeholder="••••••••••••••••••"
+                onChange={props.handleChange}
+                onBlur={props.handleBlur}
+                value={props.values.passwordConfirm}
+                touched={props.touched.passwordConfirm}
+                error={props.errors.passwordConfirm}
+              />
+            </Paper>
 
-    return (
-        <div className={className}>
-            <Formik
-                initialValues={initialValues}
-                validationSchema={validationSchema}
-                onSubmit={(values) => {
-                    onSave(values);
-                }}
-            >
-                {(props) => (
-                    <form onSubmit={props.handleSubmit} noValidate>
-                        <Paper className="reveal-2">
-                            <InputField
-                                id="password"
-                                label="Mot de passe :"
-                                name="password"
-                                type="password"
-                                isPassword={true}
-                                placeholder="••••••••••••••••••"
-                                onChange={props.handleChange}
-                                onBlur={props.handleBlur}
-                                value={props.values.password}
-                                touched={props.touched.password}
-                                error={props.errors.password}
-                            />
-                            <InputField
-                                id="passwordConfirm"
-                                label="Confirmer votre mot de passe :"
-                                name="passwordConfirm"
-                                type="password"
-                                isPassword={true}
-                                placeholder="••••••••••••••••••"
-                                onChange={props.handleChange}
-                                onBlur={props.handleBlur}
-                                value={props.values.passwordConfirm}
-                                touched={props.touched.passwordConfirm}
-                                error={props.errors.passwordConfirm}
-                            />
-                        </Paper>
-
-                        <div className="signup__bottom-action reveal-4">
-                            <Button text="Précèdent" type="button" onClick={onPrev} style="secondary" />
-                            <Button text="S'inscrire" type="submit" />
-                        </div>
-                    </form>
-                )}
-            </Formik>
-        </div>
-    );
+            <div className="signup__bottom-action reveal-4">
+              <Button text="Précèdent" type="button" onClick={onPrev} variant="secondary" />
+              <Button text="S'inscrire" type="submit" />
+            </div>
+          </form>
+        )}
+      </Formik>
+    </div>
+  );
 };
 
 export default Step3;
