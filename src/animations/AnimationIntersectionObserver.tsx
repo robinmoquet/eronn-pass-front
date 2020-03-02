@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { ReactNode, useEffect } from 'react';
 
 interface Props {
@@ -42,7 +44,7 @@ const AnimationIntersectionObserver: React.FC<Props> = ({
         };
     });
 
-    return <div>{children}</div>;
+    return <>{children}</>;
 };
 
 export default AnimationIntersectionObserver;

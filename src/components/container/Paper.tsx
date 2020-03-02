@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 
 interface Props {
@@ -5,6 +7,8 @@ interface Props {
     className?: string;
 }
 
-const Paper = ({ children, className }: Props) => <div className={className ? `${className} paper` : 'paper'}>{children}</div>;
+const Paper = ({ children, className }: Props) => (
+    <div className={className ? `${className} paper` : 'paper'}>{children}</div>
+);
 
 export default Paper;

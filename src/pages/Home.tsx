@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import NavBar from '../components/container/NavBar';
 import { PROJECT_NAME } from '../config/global';

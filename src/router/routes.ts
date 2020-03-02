@@ -1,3 +1,7 @@
+/** @format */
+
+import { REGEX_PARAM_ROUTER } from '../config/regex';
+
 const routes: { [key: string]: any } = {
     home: {
         path: '/',
@@ -66,9 +70,8 @@ export const path = (
     return encodeURI(route);
 };
 
-const regexParam = /{([a-zA-Z-]+)}/g;
-
-const routeHaveParams = (route: string): boolean => regexParam.test(route);
+const routeHaveParams = (route: string): boolean =>
+    REGEX_PARAM_ROUTER.test(route);
 
 const hasRestOptions = (
     options: { [key: string]: string },
@@ -78,7 +81,7 @@ const hasRestOptions = (
         .length > 0;
 
 const getListParams = (route: string): Array<string> | null => {
-    const found = route.match(regexParam);
+    const found = route.match(REGEX_PARAM_ROUTER);
     const res: Array<string> = [];
     found?.every((param: string) => res.push(param.replace(/[{}]/g, '')));
     return res;
