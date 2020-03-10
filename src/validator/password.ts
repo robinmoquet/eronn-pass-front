@@ -12,12 +12,9 @@ export default function password(this: any, message?: string) {
         message,
         name: 'password',
         exclusive: true,
-        test: function test(value: any) {
+        test: function test(value: string) {
             if (value === undefined) return false;
-            // la function .test() sur les regex ne marche pas
-            // probablement parce qu'elle rentre en conflit avec
-            // la methode test si dessus
-            return value.search(REGEX_PASSWORD_STRENGTH) !== -1;
+            return new RegExp(REGEX_PASSWORD_STRENGTH).test(value);
         },
     });
 }

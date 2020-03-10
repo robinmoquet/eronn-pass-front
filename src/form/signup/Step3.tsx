@@ -25,7 +25,8 @@ const Step3: React.FC<Props> = ({ onSave, className, onPrev }: Props) => {
         password: Yup.string()
             .required()
             // @ts-ignore
-            .password(),
+            .password()
+            .passwordPawned(),
         passwordConfirm: Yup.string()
             .required()
             // @ts-ignore
