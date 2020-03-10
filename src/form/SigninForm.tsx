@@ -25,6 +25,7 @@ const SignInForm: React.FC = () => {
             initialValues={initialValues}
             validationSchema={validationSchema}
             onSubmit={(values) => {
+                // eslint-disable-next-line no-alert
                 alert(JSON.stringify(values, null, 2));
             }}
         >

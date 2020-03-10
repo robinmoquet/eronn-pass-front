@@ -45,22 +45,22 @@ const Signup = () => {
     const switchAnimation = (direction: 'prev' | 'next') => {
         const refCurrentStep = document.querySelector('.current-step');
         
-        let directionMirror: string = direction === 'prev' ? 'next' : 'prev';
+        const directionMirror: string = direction === 'prev' ? 'next' : 'prev';
         let nextCurrentStep: any;
 
         if(direction === 'prev') nextCurrentStep = refCurrentStep?.previousElementSibling;
         else nextCurrentStep = refCurrentStep?.nextElementSibling;
 
         refCurrentStep?.classList.remove('current-step');
-        refCurrentStep?.classList.add('animation-to-' + directionMirror);
-        nextCurrentStep?.classList.remove(direction + '-step');
-        nextCurrentStep?.classList.add('animation-to-current-from-' + direction);
+        refCurrentStep?.classList.add(`animation-to-${directionMirror}`);
+        nextCurrentStep?.classList.remove(`${direction}-step`);
+        nextCurrentStep?.classList.add(`animation-to-current-from-${direction}`);
         setTimeout(() => {
-            refCurrentStep?.classList.add(directionMirror + '-step');
-            refCurrentStep?.classList.remove('animation-to-' + directionMirror);
+            refCurrentStep?.classList.add(`${directionMirror}-step`);
+            refCurrentStep?.classList.remove(`animation-to-${directionMirror}`);
             nextCurrentStep?.classList.add('current-step');
             nextCurrentStep?.classList.remove(
-                'animation-to-current-from-' + direction
+                `animation-to-current-from-${direction}`
             );
         }, parseInt(animationDuration, 10));
     };

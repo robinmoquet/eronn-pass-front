@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SignInForm from '../form/SignInForm';
+import SigninForm from '../form/SigninForm';
 import Title from '../components/typo/Title';
 import Wrap from '../components/container/Wrap';
 import Button from '../components/form/Button';
@@ -23,7 +23,7 @@ const Login: React.FC = () => (
                         className="login__title reveal-1"
                         tonic
                     />
-                    <SignInForm />
+                    <SigninForm />
 
                     <div className="reveal-4">
                         <p className="login__new-user">
