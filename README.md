@@ -1,5 +1,8 @@
 # Eronn Pass Front
 
+[![](https://travis-ci.org/robinmoquet/eronn-pass-front.svg?branch=master)](https://travis-ci.org/robinmoquet/eronn-pass-front.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/robinmoquet/eronn-pass-front/badge.svg?branch=master)](https://coveralls.io/github/robinmoquet/eronn-pass-front?branch=master)
+
 ### Installation
 
 * Téléchargement du projet

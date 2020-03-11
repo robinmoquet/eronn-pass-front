@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es6": true
+        "es6": true,
+        "jest/globals": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -22,7 +23,8 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "jest"
     ],
     "rules": {
         "quotes": "off",
@@ -46,6 +48,11 @@
         "react/jsx-curly-newline": "off",
         "jsx-a11y/no-static-element-interactions": "off",
         "jsx-a11y/click-events-have-key-events": "off",
-        "no-empty": "off"
+        "no-empty": "off",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
     }
 }
