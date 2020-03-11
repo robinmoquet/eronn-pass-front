@@ -6,7 +6,7 @@ import SigninForm from '../form/SigninForm';
 import Title from '../components/typo/Title';
 import Wrap from '../components/container/Wrap';
 import Button from '../components/form/Button';
-import { path } from '../router/routes';
+import { path } from '../router/route.utils';
 import Footer from '../components/container/Footer';
 import { PROJECT_NAME } from '../config/global';
 import NavBar from '../components/container/NavBar';

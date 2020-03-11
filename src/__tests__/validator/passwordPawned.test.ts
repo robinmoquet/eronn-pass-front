@@ -12,26 +12,25 @@ describe('Validation password strength', () => {
 
     it('should not be pawned', async () => {
         const pass = 'JHKkjhb_èè-(564651';
-        const res = await schema.isValid({pass});
+        const res = await schema.isValid({ pass });
         expect(res).toBe(true);
-    })
+    });
 
     it('should be pawned but true because not call api', async () => {
         const pass = 'password';
-        const res = await schema.isValid({pass});
+        const res = await schema.isValid({ pass });
         expect(res).toBe(true);
-    })
+    });
 
     it('should be pawned', async () => {
         const pass = 'Password.1';
-        const res = await schema.isValid({pass});
+        const res = await schema.isValid({ pass });
         expect(res).toBe(false);
-    })
+    });
 
     it('should be pawned again', async () => {
         const pass = 'Pa55word.';
-        const res = await schema.isValid({pass});
+        const res = await schema.isValid({ pass });
         expect(res).toBe(false);
-    })
-    
+    });
 });

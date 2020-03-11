@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PROJECT_NAME } from '../../config/global';
-import { path } from '../../router/routes';
+import { path } from '../../router/route.utils';
 
 const NavBar: React.FC = () => {
     const handleClickThemePicker = (event: any) => {

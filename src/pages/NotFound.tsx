@@ -7,7 +7,7 @@ import Footer from '../components/container/Footer';
 import Wrap from '../components/container/Wrap';
 import Paper from '../components/container/Paper';
 import Title from '../components/typo/Title';
-import { path } from '../router/routes';
+import { path } from '../router/route.utils';
 import Button from '../components/form/Button';
 import AnimationIntersectionObserver from '../animations/AnimationIntersectionObserver';
 

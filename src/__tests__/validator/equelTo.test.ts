@@ -6,11 +6,11 @@ import equalTo from '../../validator/equalTo';
 describe('Validation password strength', () => {
     yup.addMethod(yup.string, 'equalTo', equalTo);
 
-    const input = (document.createElement('input'));
+    const input = document.createElement('input');
     input.value = 'john-doe';
 
     const ref: RefObject<HTMLInputElement> = {
-        current: input
+        current: input,
     };
 
     const schema = yup.object().shape({
@@ -41,6 +41,4 @@ describe('Validation password strength', () => {
         const res = await schema.isValid({ val });
         expect(res).toBe(false);
     });
-
-    
 });

@@ -8,7 +8,7 @@ import AnimationIntersectionObserver from '../animations/AnimationIntersectionOb
 import Wrap from '../components/container/Wrap';
 import Title from '../components/typo/Title';
 import { PROJECT_NAME } from '../config/global';
-import { path } from '../router/routes';
+import { path } from '../router/route.utils';
 import Button from '../components/form/Button';
 import Step1 from '../form/signup/Step1';
 import Step2 from '../form/signup/Step2';
