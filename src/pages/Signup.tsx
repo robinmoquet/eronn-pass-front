@@ -36,7 +36,7 @@ const Signup = () => {
         // correctif bug chrome
         // Si on passe du step1 au step2 , puis qu'on fait précendent puis qu'on appuie sur la touche entrée
         // le step1 disparait et on peu decrementer l'affichage des steps ('ex : -1 / 3')
-        if(currentStep !== 1) {
+        if (currentStep !== 1) {
             switchAnimation('prev');
             setCurrentStep(currentStep - 1);
         }
@@ -44,17 +44,20 @@ const Signup = () => {
 
     const switchAnimation = (direction: 'prev' | 'next') => {
         const refCurrentStep = document.querySelector('.current-step');
-        
+
         const directionMirror: string = direction === 'prev' ? 'next' : 'prev';
         let nextCurrentStep: any;
 
-        if(direction === 'prev') nextCurrentStep = refCurrentStep?.previousElementSibling;
+        if (direction === 'prev')
+            nextCurrentStep = refCurrentStep?.previousElementSibling;
         else nextCurrentStep = refCurrentStep?.nextElementSibling;
 
         refCurrentStep?.classList.remove('current-step');
         refCurrentStep?.classList.add(`animation-to-${directionMirror}`);
         nextCurrentStep?.classList.remove(`${direction}-step`);
-        nextCurrentStep?.classList.add(`animation-to-current-from-${direction}`);
+        nextCurrentStep?.classList.add(
+            `animation-to-current-from-${direction}`
+        );
         setTimeout(() => {
             refCurrentStep?.classList.add(`${directionMirror}-step`);
             refCurrentStep?.classList.remove(`animation-to-${directionMirror}`);

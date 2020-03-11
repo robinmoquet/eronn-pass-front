@@ -8,17 +8,17 @@ import Button from '../components/form/Button';
 import Paper from '../components/container/Paper';
 
 const SignInForm: React.FC = () => {
-    const initialValues ={ 
+    const initialValues = {
         email: '',
-        password: '' 
+        password: '',
     };
 
     const validationSchema = Yup.object({
         email: Yup.string()
-          .email()
-          .required(),
+            .email()
+            .required(),
         password: Yup.string().required(),
-    })
+    });
 
     return (
         <Formik
@@ -29,7 +29,7 @@ const SignInForm: React.FC = () => {
                 alert(JSON.stringify(values, null, 2));
             }}
         >
-            {formik => (
+            {(formik) => (
                 <form onSubmit={formik.handleSubmit}>
                     <Paper className="reveal-2">
                         <InputField
@@ -65,7 +65,7 @@ const SignInForm: React.FC = () => {
                 </form>
             )}
         </Formik>
-    )
+    );
 };
 
 export default SignInForm;

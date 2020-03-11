@@ -16,7 +16,7 @@ import passwordPawned from '../validator/passwordPawned';
 // methodes customs
 yup.addMethod(yup.string, 'equalTo', equalTo);
 yup.addMethod(yup.string, 'password', password);
-yup.addMethod(yup.string, 'passwordPawned', passwordPawned)
+yup.addMethod(yup.string, 'passwordPawned', passwordPawned);
 
 // Définitions du dictionaire local
 const _locale = {

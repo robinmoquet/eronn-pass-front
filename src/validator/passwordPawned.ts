@@ -8,7 +8,7 @@ import { PWNED_PASSWORD_API } from '../config/api';
 /**
  * Validateur qui control que les mots des passe
  * apparaisent pas dans des base de donées piratée
- * 
+ *
  * @param  {any} this
  * @param  {string} message?
  */
@@ -22,44 +22,53 @@ export default function passwordPawned(this: any, message?: string) {
         name: 'passwordPawned',
         exclusive: true,
         test: async function test(value: string) {
-            const passwordValid: Boolean = new RegExp(REGEX_PASSWORD_STRENGTH).test(value);
-            if(passwordValid) {
+            const passwordValid: Boolean = new RegExp(
+                REGEX_PASSWORD_STRENGTH
+            ).test(value);
+            if (passwordValid) {
                 try {
                     return await callPasswordPawnedApi(value);
-                } catch (e) { return true }
+                } catch (e) {
+                    return true;
+                }
             } else return true;
         },
     });
 }
 /**
  * Appel l'api pwned password pour vérifié que le mot de passe
- * rensigner par l'utilisateur ne soit pas apparu dans des 
+ * rensigner par l'utilisateur ne soit pas apparu dans des
  * base de donnée piratée
- * 
+ *
  * @param  {string} password
  * @returns Promise
  */
-async function callPasswordPawnedApi(password: string): Promise<boolean>
-{
+async function callPasswordPawnedApi(password: string): Promise<boolean> {
     const passwordHash: WordArray = SHA1(password);
     const passwordToApiAllChar: string = passwordHash.toString();
-    const passwordToApiFiveFirstChar: string = passwordToApiAllChar.substring(0 , 5);
+    const passwordToApiFiveFirstChar: string = passwordToApiAllChar.substring(
+        0,
+        5
+    );
 
     let body: string = '';
 
-    const res = await fetch(`${PWNED_PASSWORD_API}/range/${passwordToApiFiveFirstChar}`);
+    const res = await fetch(
+        `${PWNED_PASSWORD_API}/range/${passwordToApiFiveFirstChar}`
+    );
     body = await res.text();
 
-    const bodyStringToArray: Array<string> = body.split("\n");
-    
-    if(bodyStringToArray.length === 0 ) return true;
-    
+    const bodyStringToArray: Array<string> = body.split('\n');
+
+    if (bodyStringToArray.length === 0) return true;
+
     let result: number = 0;
-    bodyStringToArray.forEach(element => {
+    bodyStringToArray.forEach((element) => {
         const arrayElement = element.split(':');
         const hash: string = passwordToApiFiveFirstChar + arrayElement[0];
-        if(hash.toLowerCase() === passwordToApiAllChar.toLowerCase()) result = parseInt(arrayElement[1], 10);
+        if (hash.toLowerCase() === passwordToApiAllChar.toLowerCase())
+            result = parseInt(arrayElement[1], 10);
     });
 
     return result === 0;
-};
+}
