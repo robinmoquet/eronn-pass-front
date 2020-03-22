@@ -7,6 +7,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import NotFound from '../pages/NotFound';
 import Signup from '../pages/Signup';
+import ConfirmEmail from '../pages/ConfirmEmail';
 
 const Router: React.FC = () => (
     <BrowserRouter>
@@ -17,6 +18,11 @@ const Router: React.FC = () => (
                 path={path('signup', null, false)}
                 exact
                 component={Signup}
+            />
+            <Route
+                path={path('confirmEmail', null, false)}
+                exact
+                component={ConfirmEmail}
             />
             <Route path="/" component={NotFound} />
         </Switch>

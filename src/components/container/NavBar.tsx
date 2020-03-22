@@ -8,7 +8,17 @@ import { path } from '../../router/route.utils';
 const NavBar: React.FC = () => {
     const handleClickThemePicker = (event: any) => {
         event.preventDefault();
-        document.body.classList.toggle('dark-mode');
+        const { body } = document;
+        if (body.classList.contains('light-mode')) {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        } else if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            body.classList.add('prac-mode');
+        } else {
+            body.classList.remove('prac-mode');
+            body.classList.add('light-mode');
+        }
     };
 
     return (

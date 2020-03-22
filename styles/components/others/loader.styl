@@ -1,0 +1,27 @@
+.loader
+    display block
+    position relative
+    width w = 35px
+    height w
+    border-radius 50%
+    background: linear-gradient(to top, var(--background-light) 30%, var(--tonic) 90%)
+    animation loader-rotate 1s infinite linear
+    &::after
+        content ""
+        position absolute
+        width h = 25px
+        height h
+        border-radius 50%
+        background: var(--background-light)
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+
+@keyframes loader-rotate {
+    from {
+        transform rotate(0)
+    }
+    to {
+        transform rotate(360deg)
+    }
+}

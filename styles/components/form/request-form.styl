@@ -1,0 +1,24 @@
+.request-form
+    .request-form__header
+        display flex
+        align-items center
+
+        .request-form__icon
+            margin-right calc(var(--space) * 3)
+            .material-icons
+                font-size 28px
+                &.success
+                    color var(--valid)
+                &.error
+                    color var(--error)
+        .request-form__title
+            font-size 22px
+            font-weight bold
+
+    .request-form__content
+        text-align center
+        .request-form__message
+            text-align left 
+            margin-top var(--space)
+            margin-bottom calc(var(--space) * 3)
+        

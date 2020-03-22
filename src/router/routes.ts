@@ -1,5 +1,7 @@
+/** @format */
+
 export interface RouteInterface {
-    path: string
+    path: string;
 }
 
 export const routes: { [key: string]: RouteInterface } = {
@@ -11,6 +13,9 @@ export const routes: { [key: string]: RouteInterface } = {
     },
     signup: {
         path: '/signup',
+    },
+    confirmEmail: {
+        path: '/confirm-email/{keysecure}',
     },
     technicalSupport: {
         path: '/tech-support',

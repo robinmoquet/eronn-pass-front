@@ -24,6 +24,8 @@ const _locale = {
         required: formErrorMessage.required,
     },
     string: {
+        min: formErrorMessage.min,
+        max: formErrorMessage.max,
         email: formErrorMessage.email,
         equalTo: formErrorMessage.equalTo,
         password: formErrorMessage.password,

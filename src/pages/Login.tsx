@@ -14,10 +14,10 @@ import AnimationIntersectionObserver from '../animations/AnimationIntersectionOb
 
 const Login: React.FC = () => (
     <AnimationIntersectionObserver>
-        <div className="login-page">
+        <div className="login-page page-wrapper-middle">
             <NavBar />
             <Wrap>
-                <section className="login reveal">
+                <section className="login reveal page-wrapper-middle__content">
                     <Title
                         text="Se connecter"
                         className="login__title reveal-1"

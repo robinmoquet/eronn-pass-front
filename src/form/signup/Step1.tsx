@@ -14,13 +14,19 @@ interface Props {
 
 const Step1: React.FC<Props> = ({ onSave, className }: Props) => {
     const initialValues = {
-        firstname: '',
-        lastname: '',
+        firstname: 'Demo',
+        lastname: 'Nemo',
     };
 
     const validationSchema = Yup.object({
-        firstname: Yup.string().required(),
-        lastname: Yup.string().required(),
+        firstname: Yup.string()
+            .min(3)
+            .max(40)
+            .required(),
+        lastname: Yup.string()
+            .min(3)
+            .max(40)
+            .required(),
     });
 
     return (

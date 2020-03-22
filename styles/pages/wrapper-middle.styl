@@ -1,0 +1,18 @@
+.page-wrapper-middle
+    min-height 100vh
+    display flex
+    flex-direction column
+    justify-content space-between
+
+    .page-wrapper-middle__content
+        margin calc(var(--space) * 3) auto
+        display flex
+        flex-direction column
+        justify-content center
+        // margin calc(var(--space) * 3)
+        width 40%
+        transition .3s ease
+        +breakpoint(md, down)
+            width 60%
+        +breakpoint(sm, down)
+            width 100%

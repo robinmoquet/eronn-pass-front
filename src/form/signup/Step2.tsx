@@ -17,8 +17,8 @@ const Step2: React.FC<Props> = ({ onSave, className, onPrev }: Props) => {
     const refInputEmail = createRef<HTMLInputElement>();
 
     const initialValues = {
-        email: '',
-        emailConfirm: '',
+        email: 'demo-nemo@email.com',
+        emailConfirm: 'demo-nemo@email.com',
     };
 
     const validationSchema = Yup.object({

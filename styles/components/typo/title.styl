@@ -1,5 +1,8 @@
-.title
+.title h2
     font-family var(--title-font)
     font-size var(--title-size)
     font-weight 700
     margin-bottom calc(var(--space) * 2)
+
+    +breakpoint(sm, down)
+        font-size calc(var(--title-size) / 1.2)

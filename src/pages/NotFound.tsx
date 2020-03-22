@@ -33,7 +33,7 @@ const NotFound: React.FC = () => (
                         </div>
                     </Paper>
                     <p className="not-found__helper reveal-3">
-                        Si le problème pérsiste, contacter le
+                        <span>Si le problème pérsiste, contacter le </span>
                         <Link className="link" to={path('technicalSupport')}>
                             support technique
                         </Link>
