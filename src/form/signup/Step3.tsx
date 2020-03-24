@@ -17,8 +17,8 @@ const Step3: React.FC<Props> = ({ onSave, className, onPrev }: Props) => {
     const refInputPass = createRef<HTMLInputElement>();
 
     const initialValues = {
-        password: 'Password.111',
-        passwordConfirm: 'Password.111',
+        password: '',
+        passwordConfirm: '',
     };
 
     const validationSchema = Yup.object({

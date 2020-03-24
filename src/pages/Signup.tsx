@@ -42,7 +42,7 @@ const Signup = () => {
      *
      * @param {object} values
      */
-    const handleSaveStep = (values: object) => {
+    const handleSaveStep = (values: object): void => {
         if (currentStep <= numberSteps - 1) {
             switchAnimation('next');
         }
@@ -55,7 +55,7 @@ const Signup = () => {
         }
     };
 
-    const handlePrev = () => {
+    const handlePrev = (): void => {
         // correctif bug chrome
         // Si on passe du step1 au step2 , puis qu'on fait précendent puis qu'on appuie sur la touche entrée
         // le step1 disparait et on peu decrementer l'affichage des steps ('ex : -1 / 3')
@@ -65,7 +65,7 @@ const Signup = () => {
         }
     };
 
-    const switchAnimation = (direction: 'prev' | 'next') => {
+    const switchAnimation = (direction: 'prev' | 'next'): void => {
         const refCurrentStep = document.querySelector('.current-step');
 
         const directionMirror: string = direction === 'prev' ? 'next' : 'prev';
@@ -111,7 +111,7 @@ const Signup = () => {
         setShowForm(false);
     };
 
-    const displayResultCreateUser = () => {
+    const displayResultCreateUser = (): JSX.Element => {
         if (loading) return <RequestForm loading />;
 
         if (error)

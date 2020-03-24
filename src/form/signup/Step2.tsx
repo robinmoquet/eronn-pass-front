@@ -17,8 +17,8 @@ const Step2: React.FC<Props> = ({ onSave, className, onPrev }: Props) => {
     const refInputEmail = createRef<HTMLInputElement>();
 
     const initialValues = {
-        email: 'demo-nemo@email.com',
-        emailConfirm: 'demo-nemo@email.com',
+        email: '',
+        emailConfirm: '',
     };
 
     const validationSchema = Yup.object({
@@ -49,7 +49,7 @@ const Step2: React.FC<Props> = ({ onSave, className, onPrev }: Props) => {
                                 label="Adresse email :"
                                 name="email"
                                 type="email"
-                                placeholder="john-doe@email.com"
+                                placeholder="Votre email"
                                 onChange={props.handleChange}
                                 onBlur={props.handleBlur}
                                 value={props.values.email}
@@ -63,7 +63,7 @@ const Step2: React.FC<Props> = ({ onSave, className, onPrev }: Props) => {
                                 label="Confirmer votre adresse email :"
                                 name="emailConfirm"
                                 type="email"
-                                placeholder="john-doe@email.com"
+                                placeholder="Confirmer votre email"
                                 onChange={props.handleChange}
                                 onBlur={props.handleBlur}
                                 value={props.values.emailConfirm}

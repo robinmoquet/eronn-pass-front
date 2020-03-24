@@ -14,8 +14,8 @@ interface Props {
 
 const Step1: React.FC<Props> = ({ onSave, className }: Props) => {
     const initialValues = {
-        firstname: 'Demo',
-        lastname: 'Nemo',
+        firstname: '',
+        lastname: '',
     };
 
     const validationSchema = Yup.object({
@@ -46,7 +46,7 @@ const Step1: React.FC<Props> = ({ onSave, className }: Props) => {
                                 label="Prénom :"
                                 name="firstname"
                                 type="text"
-                                placeholder="Jane"
+                                placeholder="Votre prénom"
                                 onChange={props.handleChange}
                                 onBlur={props.handleBlur}
                                 value={props.values.firstname}
@@ -58,7 +58,7 @@ const Step1: React.FC<Props> = ({ onSave, className }: Props) => {
                                 label="Nom :"
                                 name="lastname"
                                 type="text"
-                                placeholder="Doe"
+                                placeholder="Votre nom"
                                 onChange={props.handleChange}
                                 onBlur={props.handleBlur}
                                 value={props.values.lastname}

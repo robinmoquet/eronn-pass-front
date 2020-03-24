@@ -19,3 +19,11 @@ export const CREATE_USER = gql`
         }
     }
 `;
+
+export const CONNECTION = gql`
+    query Connection($connectionDto: ConnectionInput!) {
+        connection(connectionDto: $connectionDto) {
+            status, message, jwt
+        }
+    }
+`;
